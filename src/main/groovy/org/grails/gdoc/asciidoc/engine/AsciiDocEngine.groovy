@@ -4,6 +4,7 @@ import groovy.transform.CompileStatic
 import groovy.transform.InheritConstructors
 import org.grails.gdoc.asciidoc.engine.filters.BlockQuoteFilter
 import org.grails.gdoc.asciidoc.engine.filters.CodeFilter
+import org.grails.gdoc.asciidoc.engine.filters.ImageFilter
 import org.grails.gdoc.asciidoc.engine.filters.MacroFilter
 import org.grails.gdoc.asciidoc.engine.macros.CodeMacro
 import org.grails.gdoc.asciidoc.engine.macros.QuoteMacro
@@ -28,5 +29,6 @@ class AsciiDocEngine extends BaseRenderEngine {
         macroFilter.macroRepository.put("quote", new QuoteMacro())
         fp.addFilter(new CodeFilter())
         fp.addFilter(new BlockQuoteFilter())
+        fp.addFilter(new ImageFilter())
     }
 }
